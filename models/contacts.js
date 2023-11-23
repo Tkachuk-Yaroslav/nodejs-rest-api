@@ -1,7 +1,7 @@
 const fs = require("fs/promises");
 const path = require("path");
 const { nanoid } = require("nanoid");
-// fix error with dirname
+
 const contactsPath = path.join(__dirname, "contacts.json");
 
 const listContacts = async () => {
