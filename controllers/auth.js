@@ -41,6 +41,7 @@ const login = async (req, res) => {
   };
 
   const token = jwt.sign(payload, SECRET_KEY, { expiresIn: "2d" });
+  await User.findByIdAndUpdate(user._id, { token });
 
   res.status(200).json({
     token,
@@ -51,7 +52,17 @@ const login = async (req, res) => {
   });
 };
 
+const getCurrent = async (req, res) => {
+  const { email, subscription } = req.user;
+
+  res.status(200).json({
+    email,
+    subscription,
+  });
+};
+
 module.exports = {
   register: ctrlWrapper(register),
   login: ctrlWrapper(login),
+  getCurrent: ctrlWrapper(getCurrent),
 };
