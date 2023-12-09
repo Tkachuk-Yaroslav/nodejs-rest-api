@@ -6,6 +6,17 @@ const addSchema = Joi.object({
   email: Joi.string().email().required(),
 
   phone: Joi.string().min(6).max(15).required(),
+
+  favorite: Joi.boolean(),
 });
 
-module.exports = addSchema;
+const updateFavoriteSchema = Joi.object({
+  favorite: Joi.boolean().required(),
+});
+
+const schemas = {
+  addSchema,
+  updateFavoriteSchema,
+};
+
+module.exports = schemas;

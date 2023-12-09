@@ -1,5 +1,5 @@
-const addSchema = require("./contacs");
+const schemas = require("./contacs");
 
 module.exports = {
-  addSchema,
+  schemas,
 };
