@@ -13,7 +13,7 @@ router.post(
 
 router.post("/login", validateUser(authSchemas.loginSchema), ctrl.login);
 
-router.post("/current", authenticate, ctrl.getCurrent);
+router.get("/current", authenticate, ctrl.getCurrent);
 
 router.post("/logout", authenticate, ctrl.logout);
 
