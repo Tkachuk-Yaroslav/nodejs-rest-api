@@ -4,6 +4,7 @@ const isValidId = require("./isValidId");
 const validateUpdateFavorite = require("./validateUpdateFavorite");
 const validateUser = require("./validateUser");
 const authenticate = require("./authenticate");
+const upload = require("./upload");
 
 module.exports = {
   validateAddBody,
@@ -12,4 +13,5 @@ module.exports = {
   validateUpdateFavorite,
   validateUser,
   authenticate,
+  upload,
 };
