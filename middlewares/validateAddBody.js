@@ -6,10 +6,14 @@ const validateAddBody = (schema) => {
       abortEarly: false,
     });
 
+    // if (error) {
+    //   next(HttpError(400, error.message));
+    // }
+
     if (error) {
       const errorMessage = `missing required ${error.details[0].context.key} ${
         error.details[1]?.context?.key ?? ""
-      } ${error.details[2]?.context?.key ?? ""}field`;
+      } ${error.details[2]?.context?.key ?? ""} field`;
 
       next(HttpError(400, errorMessage));
     }
